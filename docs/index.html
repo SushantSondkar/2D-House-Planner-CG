@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>2D House Floor Plan Designer — OOPCG Project</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --surface: #ffffff; --text: #1a1a1a; --muted: #5a5a5a;
+    --accent: #2b6cb0; --border: #e2e2df;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15161a; --surface: #1d1f24; --text: #ececec; --muted: #a0a0a0;
+      --accent: #6fa8dc; --border: #2c2e34;
+    }
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.55;
+  }
+  header { padding: 3rem 1.5rem 1.5rem; text-align: center; }
+  header h1 { margin: 0 0 .5rem; font-size: 1.8rem; }
+  header p { color: var(--muted); max-width: 640px; margin: 0 auto; }
+  main { max-width: 860px; margin: 0 auto; padding: 1rem 1.5rem 4rem; }
+  .screenshot {
+    width: 100%; border-radius: 10px; border: 1px solid var(--border);
+    display: block; margin: 1.5rem 0;
+  }
+  .cta { text-align: center; margin: 2rem 0; }
+  .btn {
+    display: inline-block; padding: .7rem 1.4rem; border-radius: 8px;
+    background: var(--accent); color: #fff; text-decoration: none;
+    font-weight: 600; margin: 0 .4rem;
+  }
+  .btn.secondary {
+    background: transparent; color: var(--text); border: 1px solid var(--border);
+  }
+  section { margin: 2.5rem 0; }
+  h2 { font-size: 1.25rem; border-bottom: 1px solid var(--border); padding-bottom: .4rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .3rem 0; }
+  code {
+    background: var(--surface); border: 1px solid var(--border);
+    padding: .1rem .35rem; border-radius: 4px; font-size: .9em;
+  }
+  footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 2rem 0; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>2D House Floor Plan Designer</h1>
+  <p>An OOPCG (Object-Oriented Programming + Computer Graphics) college project built in C++ with SFML — draw walls, curved walls, rooms, staircases, doors and windows on a 1-metre grid, with live dimensions and area calculation.</p>
+</header>
+
+<main>
+  <img class="screenshot" src="screenshot.png" alt="Screenshot of the House Floor Plan Designer showing a room, staircase, curved wall, compass, scale bar and title block">
+
+  <div class="cta">
+    <!-- Replace this href with your own GitHub Release download link once you publish one -->
+    <a class="btn" href="../../releases/latest">⬇ Download latest build</a>
+    <a class="btn secondary" href="../../">View source on GitHub</a>
+  </div>
+
+  <section>
+    <h2>Features</h2>
+    <ul>
+      <li>Straight walls (with real wall thickness) and <strong>curved walls</strong> (quadratic Bézier curves)</li>
+      <li>Rooms — Bedroom, Living Room, Kitchen, Bathroom — placed by click-drag, with live width/height/area</li>
+      <li>A <strong>staircase</strong> object with automatically generated steps and an "up" arrow</li>
+      <li>Doors and windows with simple architectural symbols</li>
+      <li>Dimension lines showing the length of every side of a room</li>
+      <li>A north <strong>compass</strong>, a printed <strong>scale bar</strong>, a <strong>title block</strong> and a symbol <strong>legend</strong> — the standard furniture of a real civil/architectural drawing sheet</li>
+      <li>Select, move and delete any object; <strong>Undo</strong> the last action; <strong>Export</strong> the plan as a PNG image plus a text dimension report</li>
+      <li>Live total house area, shown at all times in the status bar</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Built with</h2>
+    <p><a href="https://www.sfml-dev.org/">SFML 3</a> for 2D rendering and input, and plain C++17 — chosen because it exposes raw 2D drawing primitives and coordinate math instead of hiding them, which is exactly what an OOPCG project needs to demonstrate.</p>
+  </section>
+
+  <section>
+    <h2>Run it yourself</h2>
+    <p>See <code>README.md</code> in the repository for full build instructions (CMake + SFML 3, Windows/Linux/macOS).</p>
+  </section>
+</main>
+
+<footer>
+  2D House Floor Plan Designer — OOPCG college project
+</footer>
+
+</body>
+</html>
